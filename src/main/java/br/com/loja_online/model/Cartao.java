@@ -17,7 +17,6 @@ public class Cartao {
     private String Cvv;
     private String Validade;
     private Boolean Default;
-    @OneToMany
-    @JoinColumn(name = "IdUsuario")
+    @ManyToOne
     private Usuario IdUsuario;
 }

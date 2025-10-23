@@ -1,9 +1,6 @@
 package br.com.loja_online.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -27,6 +24,9 @@ public class Endereco implements Serializable {
   private String cep;
   private String cidade;
   private String estado;
+  @OneToMany
+  @JoinColumn(name = "IdUsuario")
+  private Usuario IdUsuario;
 
   public Endereco(String logradouro, Integer numero, String bairro, String complemento, String referencia, String cep, String cidade, String estado) {
     this.logradouro = logradouro;

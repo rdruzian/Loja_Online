@@ -16,7 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/endereco")
+@RequestMapping("api/endereco")
 @RequiredArgsConstructor
 public class EnderecoController {
 

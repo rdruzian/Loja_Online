@@ -12,7 +12,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/produto")
+@RequestMapping(value = "api/produto")
 public class ProdutoController {
 
     private final ProdutoService produtoService;

@@ -8,7 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
+
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
 
     public Usuario findByLogin(String login){
         return usuarioRepository.findByLogin(login);

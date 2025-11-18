@@ -5,6 +5,8 @@ import br.com.loja_online.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
     @Autowired
@@ -20,6 +22,10 @@ public class UsuarioService {
 
     public Usuario findById(Integer id){
         return usuarioRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
+    }
+
+    public List<Usuario> findAll(){
+        return usuarioRepository.findAll();
     }
 
     public void deleteById(Integer id){

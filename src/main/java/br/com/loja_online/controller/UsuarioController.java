@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioController {
@@ -17,6 +19,15 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<Usuario> buscarPorId(@PathVariable Integer id) {
         Usuario usuario = usuarioService.findById(id);
+        if (usuario == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuario);
+    }
+
+    @GetMapping("")
+    public ResponseEntity<List<Usuario>> buscarTodos(@PathVariable Integer id) {
+        List<Usuario> usuario = usuarioService.findAll();
         if (usuario == null) {
             return ResponseEntity.notFound().build();
         }
